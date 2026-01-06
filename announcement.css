@@ -1,0 +1,89 @@
+/* Announcement Section */
+#announcement {
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.announcement-card {
+    background: linear-gradient(145deg, rgba(40, 45, 60, 0.6), rgba(27, 30, 40, 0.8));
+    border: 1px solid var(--highlight-color);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 20px auto 0;
+    transition: transform 0.3s ease;
+}
+
+.announcement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(184, 239, 114, 0.15);
+}
+
+.announcement-content h3 {
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+    margin-bottom: 10px;
+}
+
+.announcement-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.announcement-meta {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.announcement-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.cta-button.small {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+}
+
+.icon-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-button:hover {
+    background: var(--highlight-color);
+    color: var(--base-color);
+    transform: rotate(15deg);
+}
+
+@media (max-width: 768px) {
+    .announcement-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .announcement-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
