@@ -100,34 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.addEventListener('mouseenter', updatePanel);
 
-            // Mobile Interaction: Click/Tap -> Modal
+            // Mobile Interaction: Click/Tap -> Modal (Disabled for Carousel)
             card.addEventListener('click', (e) => {
-                // If on mobile, triggering modal
-                if (window.innerWidth <= 768 && sidePanel) {
-                    e.stopPropagation(); // Prevent immediate close
+                // Modified UX: Horizontal Carousel.
+                // We disabled the modal pop-up on mobile to keep it simple.
+                // If on Desktop, we still update the side panel.
+                if (window.innerWidth > 768) {
                     updatePanel();
-
-                    // Create Backdrop if missing
-                    let backdrop = document.querySelector('.modal-backdrop');
-                    if (!backdrop) {
-                        backdrop = document.createElement('div');
-                        backdrop.className = 'modal-backdrop';
-                        document.body.appendChild(backdrop);
-
-                        // Close on backdrop click
-                        backdrop.addEventListener('click', () => {
-                            sidePanel.classList.remove('active-modal');
-                            backdrop.classList.remove('active');
-                            galleryGrid.classList.remove('has-active'); // Reset blur
-                        });
-                    }
-
-                    // Show Modal
-                    sidePanel.classList.add('active-modal');
-                    backdrop.classList.add('active');
                 } else {
-                    // Desktop behavior (optional or default)
-                    updatePanel();
+                    // Mobile: Do nothing on click, just swipe.
                 }
             });
 
