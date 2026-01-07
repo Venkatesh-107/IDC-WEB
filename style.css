@@ -1030,8 +1030,7 @@ p {
 
 .example-2 .icon-content a[data-social="email"] .filled,
 .example-2 .icon-content a[data-social="email"]~.tooltip {
-    background-color: #ea4335;
-    /* Gmail Red */
+    background-color: #a7db6b;
 }
 
 /* Apple Text Effect Removed - Using highlight-text instead */
@@ -2128,9 +2127,4 @@ p {
     .form-textarea {
         font-size: 16px;
     }
-}
-
-/* No global backdrop needed for carousel */
-.modal-backdrop {
-    display: none !important;
 }

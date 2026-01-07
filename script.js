@@ -100,17 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.addEventListener('mouseenter', updatePanel);
 
-            // Mobile Interaction: Click/Tap -> Modal (Disabled for Carousel)
-            card.addEventListener('click', (e) => {
-                // Modified UX: Horizontal Carousel.
-                // We disabled the modal pop-up on mobile to keep it simple.
-                // If on Desktop, we still update the side panel.
-                if (window.innerWidth > 768) {
-                    updatePanel();
-                } else {
-                    // Mobile: Do nothing on click, just swipe.
-                }
-            });
+
 
             card.addEventListener('mouseleave', () => {
                 galleryGrid.classList.remove('has-active');
