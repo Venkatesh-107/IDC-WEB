@@ -1288,7 +1288,7 @@ p {
 
 .social-icon.email:hover,
 .social-icon[data-social="email"]:hover {
-    background: linear-gradient(135deg, #EA4335, #B03025);
+    background: linear-gradient(135deg, #7bec30, #7bec30);
 }
 
 .social-icon.youtube:hover,
