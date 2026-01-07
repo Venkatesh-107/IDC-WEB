@@ -50,20 +50,45 @@
     <section class="content-section fade-in-up delay-200" style="padding-top: 0;">
         <div class="container">
             <div class="register-container">
-                <form id="registration-form">
+                <!-- 
+                    GOOGLE FORM INTEGRATION:
+                    1. Replaced 'action' with your form's Response URL.
+                    2. Added 'target="hidden_iframe"' to prevent page reload.
+                    3. Added 'onsubmit' to handle the success state.
+                -->
+                <script type="text/javascript">var submitted = false;</script>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {
+                            document.getElementById('registration-form').reset();
+                            alert('Thank you! Your application has been submitted to IDC.');
+                            window.location.href = 'index.html'; 
+                        }">
+                </iframe>
+
+                <form id="registration-form"
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSfa0HALkKkwGNl1Zmwc2cRVR6EElmsccZnKxjYCsKRz1eF15Q/formResponse"
+                    method="post" target="hidden_iframe" onsubmit="submitted=true;">
+
+                    <!-- 
+                        IMPORTANT: You must replace the 'name' attributes below 
+                        with the specific 'entry.123456' IDs from your Google Form source code.
+                        Inspect your Google Form -> Search for 'entry.' -> Copy IDs.
+                      -->
+
                     <div class="form-group">
                         <label for="name" class="form-label">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+                        <input type="text" id="name" name="entry.REPLACE_WITH_NAME_ID" class="form-input" required
+                            placeholder="Ex: John Doe">
                     </div>
 
                     <div class="form-group">
                         <label for="reg-no" class="form-label">University / College Name</label>
-                        <input type="text" id="reg-no" name="reg-no" class="form-input" required>
+                        <input type="text" id="reg-no" name="entry.REPLACE_WITH_COLLEGE_ID" class="form-input" required
+                            placeholder="Ex: AMCET">
                     </div>
 
                     <div class="form-group">
                         <label for="department" class="form-label">Department</label>
-                        <select id="department" name="department" class="form-select" required>
+                        <select id="department" name="entry.REPLACE_WITH_DEPT_ID" class="form-select" required>
                             <option value="">Select Department</option>
                             <option value="CSE">CSE</option>
                             <option value="AI&DS">AI&DS</option>
@@ -78,7 +103,7 @@
 
                     <div class="form-group">
                         <label for="year" class="form-label">Year of Study</label>
-                        <select id="year" name="year" class="form-select" required>
+                        <select id="year" name="entry.REPLACE_WITH_YEAR_ID" class="form-select" required>
                             <option value="">Select Year</option>
                             <option value="I">I Year</option>
                             <option value="II">II Year</option>
@@ -89,12 +114,14 @@
 
                     <div class="form-group">
                         <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
+                        <input type="email" id="email" name="entry.REPLACE_WITH_EMAIL_ID" class="form-input" required
+                            placeholder="example@email.com">
                     </div>
 
                     <div class="form-group" style="margin-bottom: 30px;">
                         <label for="reason" class="form-label">Why do you want to join?</label>
-                        <textarea id="reason" name="reason" rows="4" class="form-textarea"></textarea>
+                        <textarea id="reason" name="entry.REPLACE_WITH_REASON_ID" rows="4" class="form-textarea"
+                            placeholder="Tell us your motivation..."></textarea>
                     </div>
 
                     <button type="submit" class="cta-button btn-submit">Submit Application</button>
