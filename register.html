@@ -50,17 +50,18 @@
     <section class="content-section fade-in-up delay-200" style="padding-top: 0;">
         <div class="container">
             <div class="register-container">
-                <!-- 
+                <!--
                     GOOGLE FORM INTEGRATION:
                     1. Replaced 'action' with your form's Response URL.
                     2. Added 'target="hidden_iframe"' to prevent page reload.
                     3. Added 'onsubmit' to handle the success state.
                 -->
+                <!-- DEBUG MODE: Iframe is visible to see Google's error message -->
                 <script type="text/javascript">var submitted = false;</script>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {
-                            document.getElementById('registration-form').reset();
-                            alert('Thank you! Your application has been submitted to IDC.');
-                            window.location.href = 'index.html'; 
+                <iframe name="hidden_iframe" id="hidden_iframe"
+                    style="width:100%; height:400px; border:2px solid red; margin-bottom: 20px;" onload="if(submitted) {
+                            // Do not reset yet, let user see the error
+                            console.log('Form submission response received');
                         }">
                 </iframe>
 
@@ -68,7 +69,10 @@
                     action="https://docs.google.com/forms/d/e/1FAIpQLSfa0HALkKkwGNl1Zmwc2cRVR6EElmsccZnKxjYCsKRz1eF15Q/formResponse"
                     method="post" target="hidden_iframe" onsubmit="submitted=true;">
 
-                    <!-- 
+                    <!-- Added missing field found in URL -->
+                    <input type="hidden" name="entry.613293224" value="Agreed">
+
+                    <!--
                         IMPORTANT: IDs updated based on user provided link.
                       -->
 
