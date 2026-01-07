@@ -1028,6 +1028,12 @@ p {
     background-color: #ff0000;
 }
 
+.example-2 .icon-content a[data-social="email"] .filled,
+.example-2 .icon-content a[data-social="email"]~.tooltip {
+    background-color: #ea4335;
+    /* Gmail Red */
+}
+
 /* Apple Text Effect Removed - Using highlight-text instead */
 /* Announcement Section */
 #announcement {
