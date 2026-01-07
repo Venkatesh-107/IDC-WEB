@@ -100,14 +100,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.addEventListener('mouseenter', updatePanel);
 
-            // Mobile Interaction: Click/Tap
-            card.addEventListener('click', () => {
-                updatePanel();
-                // Scroll to details on mobile if stacked
+            // Mobile Interaction: Click/Tap -> Modal
+            card.addEventListener('click', (e) => {
+                // If on mobile, triggering modal
                 if (window.innerWidth <= 768 && sidePanel) {
-                    setTimeout(() => {
-                        sidePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100);
+                    e.stopPropagation(); // Prevent immediate close
+                    updatePanel();
+
+                    // Create Backdrop if missing
+                    let backdrop = document.querySelector('.modal-backdrop');
+                    if (!backdrop) {
+                        backdrop = document.createElement('div');
+                        backdrop.className = 'modal-backdrop';
+                        document.body.appendChild(backdrop);
+
+                        // Close on backdrop click
+                        backdrop.addEventListener('click', () => {
+                            sidePanel.classList.remove('active-modal');
+                            backdrop.classList.remove('active');
+                            galleryGrid.classList.remove('has-active'); // Reset blur
+                        });
+                    }
+
+                    // Show Modal
+                    sidePanel.classList.add('active-modal');
+                    backdrop.classList.add('active');
+                } else {
+                    // Desktop behavior (optional or default)
+                    updatePanel();
                 }
             });
 
