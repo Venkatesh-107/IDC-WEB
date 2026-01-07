@@ -2023,7 +2023,41 @@ p {
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        /* Reduced from 1.8rem */
+        margin-bottom: 20px;
+    }
+
+    /* Header & Logo Scaling */
+    .brand-logo {
+        max-height: 40px;
+        /* Reduced from default */
+        width: auto;
+    }
+
+    .header-container {
+        padding: 10px 15px;
+        /* Tighter padding */
+    }
+
+    /* Fluid Member Cards */
+    .member-card-new {
+        width: 90%;
+        max-width: 280px;
+        /* Prevent being too huge */
+        height: auto;
+        min-height: 320px;
+        margin: 0 auto 30px;
+        /* Center with bottom spacing */
+        /* display: block; already flex/block, ensure centering */
+    }
+
+    .members-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centers the cards */
+        gap: 0;
     }
 
     /* Gallery Carousel Layout (Horizontal Swipe) */
