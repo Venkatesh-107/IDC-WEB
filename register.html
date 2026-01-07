@@ -49,31 +49,21 @@
     <!-- Registration Section -->
     <section class="content-section fade-in-up delay-200" style="padding-top: 0;">
         <div class="container">
-            <div class="register-container"
-                style="max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px;">
+            <div class="register-container">
                 <form id="registration-form">
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="name"
-                            style="display: block; margin-bottom: 8px; color: var(--highlight-color); font-weight: 500;">Full
-                            Name</label>
-                        <input type="text" id="name" name="name" required
-                            style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; font-family: inherit;">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="reg-no"
-                            style="display: block; margin-bottom: 8px; color: var(--highlight-color); font-weight: 500;">University
-                            /
-                            College Name</label>
-                        <input type="text" id="reg-no" name="reg-no" required
-                            style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; font-family: inherit;">
+                    <div class="form-group">
+                        <label for="reg-no" class="form-label">University / College Name</label>
+                        <input type="text" id="reg-no" name="reg-no" class="form-input" required>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="department"
-                            style="display: block; margin-bottom: 8px; color: var(--highlight-color); font-weight: 500;">Department</label>
-                        <select id="department" name="department" required
-                            style="width: 100%; padding: 12px; background: #1B1E28; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; font-family: inherit;">
+                    <div class="form-group">
+                        <label for="department" class="form-label">Department</label>
+                        <select id="department" name="department" class="form-select" required>
                             <option value="">Select Department</option>
                             <option value="CSE">CSE</option>
                             <option value="AI&DS">AI&DS</option>
@@ -86,12 +76,9 @@
                         </select>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="year"
-                            style="display: block; margin-bottom: 8px; color: var(--highlight-color); font-weight: 500;">Year
-                            of Study</label>
-                        <select id="year" name="year" required
-                            style="width: 100%; padding: 12px; background: #1B1E28; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; font-family: inherit;">
+                    <div class="form-group">
+                        <label for="year" class="form-label">Year of Study</label>
+                        <select id="year" name="year" class="form-select" required>
                             <option value="">Select Year</option>
                             <option value="I">I Year</option>
                             <option value="II">II Year</option>
@@ -100,28 +87,19 @@
                         </select>
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label for="email"
-                            style="display: block; margin-bottom: 8px; color: var(--highlight-color); font-weight: 500;">Email
-                            Address</label>
-                        <input type="email" id="email" name="email" required
-                            style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; font-family: inherit;">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
                     </div>
 
                     <div class="form-group" style="margin-bottom: 30px;">
-                        <label for="reason"
-                            style="display: block; margin-bottom: 8px; color: var(--highlight-color); font-weight: 500;">Why
-                            do you want to join?</label>
-                        <textarea id="reason" name="reason" rows="4"
-                            style="width: 100%; padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; font-family: inherit; resize: vertical;"></textarea>
+                        <label for="reason" class="form-label">Why do you want to join?</label>
+                        <textarea id="reason" name="reason" rows="4" class="form-textarea"></textarea>
                     </div>
 
-                    <button type="submit" class="cta-button"
-                        style="width: 100%; border: none; cursor: pointer; font-size: 1.1rem;">Submit
-                        Application</button>
+                    <button type="submit" class="cta-button btn-submit">Submit Application</button>
 
-                    <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: rgba(255,255,255,0.5);">*
-                        By registering, you agree to our club guidelines.</p>
+                    <p class="form-disclaimer">* By registering, you agree to our club guidelines.</p>
                 </form>
             </div>
         </div>

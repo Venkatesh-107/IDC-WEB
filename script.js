@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const panelContent = sidePanel ? sidePanel.querySelector('.side-panel-content') : null;
 
         cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
+            function updatePanel() {
                 const title = card.getAttribute('data-event-title');
                 const desc = card.getAttribute('data-event-desc');
                 const imgSrc = card.querySelector('img').src;
@@ -95,6 +95,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         panelImage.src = imgSrc;
                         panelContent.classList.add('active');
                     }, 50);
+                }
+            }
+
+            card.addEventListener('mouseenter', updatePanel);
+
+            // Mobile Interaction: Click/Tap
+            card.addEventListener('click', () => {
+                updatePanel();
+                // Scroll to details on mobile if stacked
+                if (window.innerWidth <= 768 && sidePanel) {
+                    setTimeout(() => {
+                        sidePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
                 }
             });
 
